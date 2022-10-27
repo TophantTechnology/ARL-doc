@@ -1,0 +1,32 @@
+site_name: ARL 资产灯塔系统安装和使用文档
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - announce.dismiss
+
+plugins:
+  - glightbox
+
+nav:
+  - 介绍: index.md
+  - 系统安装: system_install.md
+  - 任务选项说明: task_option.md
+  - 配置参数说明: config_option.md
+  - 忘记密码重置: forget_pass.md
+  - 功能说明:
+      - 已有功能: function_desc/index.md
+      - 任务管理: function_desc/task.md
+      - 资产搜索: function_desc/asset_search.md
+      - 资产监控: function_desc/asset_monitor.md
+      - 资产分组: function_desc/asset_group.md
+      - 策略配置: function_desc/policy.md
+      - 指纹管理: function_desc/finger.md
+      - 计划任务: function_desc/schedule_task.md
+      - GitHub监控: function_desc/github_monitor.md
+  - 场景举例: scene_example.md
+  - 常见问题: faq.md
+  - API集成: api.md
+  - 发布日志: release_log.md
+  - 免责声明: disclaimer.md
+
