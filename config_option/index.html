@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.1, mkdocs-material-8.5.6" name="generator"/>
+<title>配置参数说明 - ARL 资产灯塔系统安装和使用文档</title>
+<link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="ARL 资产灯塔系统安装和使用文档" class="md-header__button md-logo" data-md-component="logo" href=".." title="ARL 资产灯塔系统安装和使用文档">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            ARL 资产灯塔系统安装和使用文档
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              配置参数说明
+            
+          </span>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="ARL 资产灯塔系统安装和使用文档" class="md-nav__button md-logo" data-md-component="logo" href=".." title="ARL 资产灯塔系统安装和使用文档">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    ARL 资产灯塔系统安装和使用文档
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        介绍
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../system_install/">
+        系统安装
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../task_option/">
+        任务选项说明
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          配置参数说明
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        配置参数说明
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    通过钉钉/邮箱进行资产监控任务结果推送
+  </a>
+<nav aria-label="通过钉钉/邮箱进行资产监控任务结果推送" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.添加机器人
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.修改配置文件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.测试和重启
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.测试效果图
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 邮箱测试效果图
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webhook">
+    监控任务自定义 WEBHOOK 功能
+  </a>
+<nav aria-label="监控任务自定义 WEBHOOK 功能" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    代理配置项
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    域名查询插件选项
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../forget_pass/">
+        忘记密码重置
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+          功能说明
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="功能说明" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          功能说明
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/">
+        已有功能
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/task/">
+        任务管理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/asset_search/">
+        资产搜索
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/asset_monitor/">
+        资产监控
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/asset_group/">
+        资产分组
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/policy/">
+        策略配置
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/finger/">
+        指纹管理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/schedule_task/">
+        计划任务
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/github_monitor/">
+        GitHub监控
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../scene_example/">
+        场景举例
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../faq/">
+        常见问题
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/">
+        API集成
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../release_log/">
+        发布日志
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../disclaimer/">
+        免责声明
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    通过钉钉/邮箱进行资产监控任务结果推送
+  </a>
+<nav aria-label="通过钉钉/邮箱进行资产监控任务结果推送" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.添加机器人
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.修改配置文件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.测试和重启
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.测试效果图
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 邮箱测试效果图
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webhook">
+    监控任务自定义 WEBHOOK 功能
+  </a>
+<nav aria-label="监控任务自定义 WEBHOOK 功能" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    代理配置项
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    域名查询插件选项
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>配置参数说明</h1>
+<p>Docker环境配置文件路径 docker/config-docker.yaml</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CELERY.BROKER_URL</td>
+<td>rabbitmq连接信息</td>
+</tr>
+<tr>
+<td>MONGO</td>
+<td>mongo 连接信息</td>
+</tr>
+<tr>
+<td>QUERY_PLUGIN</td>
+<td>域名查询插件数据源Token 配置</td>
+</tr>
+<tr>
+<td>GEOIP</td>
+<td>GEOIP 数据库路径信息</td>
+</tr>
+<tr>
+<td>FOFA</td>
+<td>FOFA API 配置信息</td>
+</tr>
+<tr>
+<td>DINGDING</td>
+<td>钉钉消息推送配置</td>
+</tr>
+<tr>
+<td>EMAIL</td>
+<td>邮箱发送配置</td>
+</tr>
+<tr>
+<td>GITHUB.TOKEN</td>
+<td>GITHUB 搜索 TOKEN</td>
+</tr>
+<tr>
+<td>ARL.AUTH</td>
+<td>是否开启认证，不开启有安全风险</td>
+</tr>
+<tr>
+<td>ARL.API_KEY</td>
+<td>arl后端API调用key，如果设置了请注意保密</td>
+</tr>
+<tr>
+<td>ARL.BLACK_IPS</td>
+<td>为了防止SSRF，屏蔽的IP地址或者IP段</td>
+</tr>
+<tr>
+<td>ARL.PORT_TOP_10</td>
+<td>自定义端口，对应前端端口测试选项</td>
+</tr>
+<tr>
+<td>ARL.DOMAIN_DICT</td>
+<td>域名爆破字典，对应前端大字典选项</td>
+</tr>
+<tr>
+<td>ARL.FILE_LEAK_DICT</td>
+<td>文件泄漏字典</td>
+</tr>
+<tr>
+<td>ARL.DOMAIN_BRUTE_CONCURRENT</td>
+<td>域名爆破并发数配置</td>
+</tr>
+<tr>
+<td>ARL.ALT_DNS_CONCURRENT</td>
+<td>组合生成的域名爆破并发数</td>
+</tr>
+<tr>
+<td>PROXY.HTTP_URL</td>
+<td>HTTP代理URL设置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">通过钉钉/邮箱进行资产监控任务结果推送</h3>
+<h4 id="1">1.添加机器人</h4>
+<p>使用下面的步骤添加钉钉机器人 【电脑钉钉 】-【群聊】-【群设置】-【智能群助手】-【添加更多】-【添加机器人】-【自定义】-【添加】</p>
+<p>其中安全设置勾选加签，并保存SEC开始的字符串
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025190738451_1990.png"><img alt="" src="../images/20221025190738451_1990.png"/></a>
+点击完成将Webhook 地址保存，</p>
+<h4 id="2">2.修改配置文件</h4>
+<p>修改docker/config-docker.yaml 文件, 将 DINGDING-&gt;SECRET 配置为SEC开头的字符串 将DINGDING-&gt;ACCESS_TOKEN 配置为Webhook地址中的access_token值</p>
+<p>邮箱配置示例， 由于25端口可能被云厂商封禁，请使用465（ssl）端口</p>
+<pre><code>EMAIL:
+  HOST: "smtp.qq.com"
+  PORT: "465"
+  USERNAME: "yourname@qq.com"
+  PASSWORD: "youpassword"
+  TO: "youname@qq.com"   ##接收邮箱
+</code></pre>
+<h4 id="3">3.测试和重启</h4>
+<p>执行下面的命令，如果配置正常的话将会收到邮箱和钉钉推送</p>
+<pre><code>docker-compose exec worker bash
+python3.6 -m test.test_utils_push
+</code></pre>
+<p>如果测试没问题的话，记得执行下面的命令重启让应用生效</p>
+<pre><code>docker-compose restart
+</code></pre>
+<h4 id="4">4.测试效果图</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025191021627_5147.png"><img alt="" src="../images/20221025191021627_5147.png"/></a></p>
+<h4 id="5">5. 邮箱测试效果图</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025191043820_7471.png"><img alt="" src="../images/20221025191043820_7471.png"/></a></p>
+<h3 id="webhook">监控任务自定义 WEBHOOK 功能</h3>
+<p>可以在<code>config-docker.yaml</code> <code>WEBHOOK</code>选项下配置</p>
+<p>IP/域名监控和站点监控结束后会往配置的webhook URL POST提交JSON数据</p>
+<p>为了验证身份会在Header中带上Token 字段, 接收方可以验证Token字段是否符合预期</p>
+<p>进入容器测试 <code>docker-compose exec worker bash</code></p>
+<p>测试命令 <code>python3.6 -m test.test_webhook &lt;task_id&gt; &lt;scope_id&gt;</code></p>
+<p>如果没有传递source参数，那么就会全部测试。</p>
+<p>测试完毕后重启容器生效。</p>
+<h4 id="_2">代理配置项</h4>
+<p>如果为空表示不配置代理。 在docker/config-docker.yaml 配置选项添加了HTTP_URL配置选项， 重启容器生效。 测试配置是否正常工作</p>
+<pre><code>docker-compose exec worker bash
+python3.6 -m test.test_proxy_url
+</code></pre>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025194401925_12834.png"><img alt="" src="../images/20221025194401925_12834.png"/></a></p>
+<h3 id="_3">域名查询插件选项</h3>
+<p>在添加任务选项框中有一个域名查询插件选项，目前已支持的数据源为11个，<code>alienvault</code>, <code>certspotter</code>,<code>crtsh</code>,<code>fofa</code>,<code>hunter</code>,<code>passivetotal</code>,<code>quake</code>, <code>rapiddns</code> <code>securitytrails</code>,<code>threatminer</code>,<code>virustotal</code></p>
+<p>相关代码可以在这里查看 <a href="https://github.com/TophantTechnology/ARL/tree/master/app/services/dns_query_plugin">dns_query_plugin</a></p>
+<p>由于部分数据源需要配置<code>Token</code>,可以在<code>config-docker.yaml</code> <code>QUERY_PLUGIN</code>选项下配置</p>
+<p>测试Token有效性</p>
+<p>进入容器测试 <code>docker-compose exec worker bash</code></p>
+<p>测试命令  <code>python3.6 -m test.test_query_plugin [source1] [source2]</code></p>
+<p>如果没有传递source参数，那么就会全部测试。</p>
+<p>测试完毕后重启容器生效。</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 任务选项说明" class="md-footer__link md-footer__link--prev" href="../task_option/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              任务选项说明
+            </div>
+</div>
+</a>
+<a aria-label="Next: 忘记密码重置" class="md-footer__link md-footer__link--next" href="../forget_pass/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              忘记密码重置
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "announce.dismiss"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>
