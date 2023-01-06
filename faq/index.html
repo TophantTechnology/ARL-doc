@@ -224,6 +224,35 @@
     9. 使用全端口扫描一直停在端口扫描阶段
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+    10. 任务结果域名很多，但是站点数却没有
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    11. 如何升级
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-docker">
+    12. Docker 环境如何卸载并重装
+  </a>
+<nav aria-label="12. Docker 环境如何卸载并重装" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    卸载
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    重装
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -301,6 +330,35 @@
     9. 使用全端口扫描一直停在端口扫描阶段
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+    10. 任务结果域名很多，但是站点数却没有
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    11. 如何升级
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-docker">
+    12. Docker 环境如何卸载并重装
+  </a>
+<nav aria-label="12. Docker 环境如何卸载并重装" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    卸载
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    重装
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -356,6 +414,47 @@ docker-compose up -d
 <p>可以从arl_worker.log，nmap进程是否还在，出网流量等外部状态判断任务是还在运行还是已经结束了。
 如果任务没有在运行了，并且查看docker ps 发现容器重启过了，可能是大量端口扫描导致的docker 网卡出现了异常，任务被关闭了，但是任务状态并没有感知到。 
 如果确切有全端口扫描的需求，可以使用源码安装的方式运行ARL</p>
+<h3 id="10">10. 任务结果域名很多，但是站点数却没有</h3>
+<ol>
+<li>可以在IP选项卡中观察端口结果，如果一个都没有可能是扫描过程中被拦截了，端口扫描选项可以不勾选再测试或者端口扫描类型使用测试选项。</li>
+<li>可以在IP选项卡中观察IP归属地选项，大部分是一些国外的IP, 域名是国内厂商可能被神秘力量干扰了。</li>
+</ol>
+<h3 id="11">11. 如何升级</h3>
+<ol>
+<li>如果有docker-compose.yml等文件有更新可以在Github Releases 对应版本中下载 docker.zip文件 </li>
+<li>如果没有可以手动修改.env中版本为指定版本 (v2.5.3 以后的版本)</li>
+<li>前期条件准备了，记得把旧版本容器停止和删除了再升级，可以<code>docker ps -a</code>查看是否有旧版本容器</li>
+</ol>
+<p>然后就是更新镜像和启动了</p>
+<pre><code>docker-compose down
+docker-compose pull --no-parallel
+docker-compose up -d
+</code></pre>
+<h3 id="12-docker">12. Docker 环境如何卸载并重装</h3>
+<p>如果忘记了原先的启动目录可以使用下面的命令进行容器停止和删除</p>
+<pre><code>docker stop arl_web
+docker stop arl_worker
+docker stop arl_scheduler
+docker stop arl_rabbitmq
+docker stop arl_mongodb
+docker rm arl_web
+docker rm arl_worker
+docker rm arl_scheduler
+docker rm arl_rabbitmq
+docker rm arl_mongodb
+</code></pre>
+<h4 id="_1">卸载</h4>
+<pre><code>docker-compose down 
+docker volume rm arl_db
+</code></pre>
+<p>再删除当前目录的文件就可以。</p>
+<h4 id="_2">重装</h4>
+<pre><code>wget -O docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.3/docker.zip
+unzip -o docker.zip
+docker-compose pull
+docker volume create arl_db
+docker-compose up -d
+</code></pre>
 </article>
 </div>
 </div>
