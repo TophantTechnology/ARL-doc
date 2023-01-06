@@ -20,6 +20,7 @@ Docker环境配置文件路径 docker/config-docker.yaml
 | ARL.DOMAIN\_BRUTE\_CONCURRENT | 域名爆破并发数配置 |
 | ARL.ALT\_DNS\_CONCURRENT | 组合生成的域名爆破并发数 |
 | PROXY.HTTP_URL | HTTP代理URL设置 |
+| QUERY_PLUGIN | 域名插件选项配置 |
 
 
 ### 通过钉钉/邮箱进行资产监控任务结果推送
@@ -87,13 +88,18 @@ python3.6 -m test.test_proxy_url
 ![](images/20221025194401925_12834.png)
 
 ### 域名查询插件选项
-在添加任务选项框中有一个域名查询插件选项，目前已支持的数据源为11个，`alienvault`, `certspotter`,`crtsh`,`fofa`,`hunter`,`passivetotal`,`quake`, `rapiddns` `securitytrails`,`threatminer`,`virustotal`
+在添加任务选项框中有一个域名查询插件选项，目前已支持的数据源为12个 
+
+`alienvault`, `certspotter`,`crtsh`,`fofa`,`hunter`,`passivetotal`,
+`quake`, `rapiddns` `securitytrails`,`threatminer`,`virustotal`, `zoomeye`
 
 相关代码可以在这里查看 [dns_query_plugin](https://github.com/TophantTechnology/ARL/tree/master/app/services/dns_query_plugin)
 
 由于部分数据源需要配置`Token`,可以在`config-docker.yaml` `QUERY_PLUGIN`选项下配置
 
-测试Token有效性
+可以通过enable字段来控制是否启用。
+
+### 测试Token有效性
 
 进入容器测试 `docker-compose exec worker bash`
 
