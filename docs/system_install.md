@@ -30,9 +30,9 @@ systemctl start docker
 #### 2. ARL安装和启动
 ```
 mkdir docker_arl
-wget -O docker_arl/docker2.5.2.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.2/docker.zip
+wget -O docker_arl/docker2.5.4.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.4/docker.zip
 cd docker_arl
-unzip docker2.5.2.zip
+unzip docker2.5.4.zip
 docker volume create arl_db
 docker-compose up -d
 ```
