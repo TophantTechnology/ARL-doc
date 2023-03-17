@@ -105,7 +105,7 @@ docker volume rm arl_db
 
 #### 重装
 ```
-wget -O docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.3/docker.zip
+wget -O docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.4/docker.zip
 unzip -o docker.zip
 docker-compose pull
 docker volume create arl_db
