@@ -75,7 +75,7 @@ docker-compose up -d
 3. 前期条件准备了，记得把旧版本容器停止和删除了再升级，可以`docker ps -a`查看是否有旧版本容器
 
 然后就是更新镜像和启动了
-```
+```shell
 docker-compose down
 docker-compose pull --no-parallel
 docker-compose up -d
@@ -83,7 +83,7 @@ docker-compose up -d
 
 ### 12. Docker 环境如何卸载并重装
 如果忘记了原先的启动目录可以使用下面的命令进行容器停止和删除
-```
+```shell
 docker stop arl_web
 docker stop arl_worker
 docker stop arl_scheduler
@@ -97,14 +97,14 @@ docker rm arl_mongodb
 ```
 
 #### 卸载
-```
+```shell
 docker-compose down 
 docker volume rm arl_db
 ```
 再删除当前目录的文件就可以。
 
 #### 重装
-```
+```shell
 wget -O docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.4/docker.zip
 unzip -o docker.zip
 docker-compose pull
@@ -112,3 +112,14 @@ docker volume create arl_db
 docker-compose up -d
 ```
 
+### 13. 如何修改ARL-NPoC 的弱口令爆破字典
+
+1. 进入容器
+```shell
+docker exec -it arl_worker bash
+```
+
+2. 字典目录
+```shell
+ls -alh /opt/ARL-NPoC/xing/dicts
+```

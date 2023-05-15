@@ -88,10 +88,10 @@ python3.6 -m test.test_proxy_url
 ![](images/20221025194401925_12834.png)
 
 ### 域名查询插件选项
-在添加任务选项框中有一个域名查询插件选项，目前已支持的数据源为12个 
+在添加任务选项框中有一个域名查询插件选项，目前已支持的数据源为11个 
 
 `alienvault`, `certspotter`,`crtsh`,`fofa`,`hunter`,`passivetotal`,
-`quake`, `rapiddns` `securitytrails`,`threatminer`,`virustotal`, `zoomeye`
+`quake`, `rapiddns` `securitytrails`,`virustotal`, `zoomeye`
 
 相关代码可以在这里查看 [dns_query_plugin](https://github.com/TophantTechnology/ARL/tree/master/app/services/dns_query_plugin)
 
