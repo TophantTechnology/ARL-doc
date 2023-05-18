@@ -1,18 +1,20 @@
 
 <!DOCTYPE html>
 
-<html class="no-js" lang="en">
+<html class="no-js" lang="zh">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.1, mkdocs-material-8.5.6" name="generator"/>
+<link href="../api/" rel="prev"/>
+<link href="../disclaimer/" rel="next"/>
+<link href="../favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.9" name="generator"/>
 <title>发布日志 - ARL 资产灯塔系统安装和使用文档</title>
-<link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.a6bdf11c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Nunito Sans";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -23,7 +25,7 @@
             
                 .gscrollbar-fixer { padding-right: 15px; }
                 </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
-<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -32,9 +34,14 @@
 <div data-md-component="announce">
 </div>
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
+<nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="ARL 资产灯塔系统安装和使用文档" class="md-header__button md-logo" data-md-component="logo" href=".." title="ARL 资产灯塔系统安装和使用文档">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<svg viewbox="0 0 89 89" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z"></path>
+<path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path>
+<path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z"></path>
+<path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path>
+</svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -55,18 +62,118 @@
 </div>
 </div>
 </div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 </nav>
 </header>
 <div class="md-container" data-md-component="container">
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+      介绍
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../system_install/">
+      系统安装
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../task_option/">
+      任务选项说明
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../config_option/">
+      配置参数说明
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../forget_pass/">
+      忘记密码重置
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../function_desc/">
+        功能说明
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../scene_example/">
+      场景举例
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../faq/">
+      常见问题
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../api/">
+      API集成
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+      发布日志
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../disclaimer/">
+      免责声明
+    </a>
+</li>
+</ul>
+</div>
+</nav>
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="ARL 资产灯塔系统安装和使用文档" class="md-nav__button md-logo" data-md-component="logo" href=".." title="ARL 资产灯塔系统安装和使用文档">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<svg viewbox="0 0 89 89" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z"></path>
+<path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path>
+<path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z"></path>
+<path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path>
+</svg>
 </a>
     ARL 资产灯塔系统安装和使用文档
   </label>
@@ -97,22 +204,19 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6">
-          功能说明
-          <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../function_desc/">功能说明</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="功能说明" class="md-nav" data-md-level="1">
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           功能说明
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../function_desc/">
-        已有功能
-      </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../function_desc/task/">
         任务管理
@@ -172,7 +276,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <a class="md-nav__link md-nav__link--active" href="./">
         发布日志
       </a>
@@ -190,7 +294,7 @@
 <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
 </nav>
 </div>
 </div>
@@ -198,102 +302,114 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>发布日志</h1>
-<pre><code class="language-timeline"># 2020-09-10
-ARL v2 发布
-
-# 2020-09-30
-ARL v2.1 发布
-
-# 2020-12-09
-ARL v2.2 发布
-
-# 2021-01-08
-ARL v2.2.1 发布
-
-# 2021-03-19
-ARL v2.3 发布
-
-# 2021-05-19
-ARL v2.3.1 发布
-
-# 2021-07-22
-ARL v2.4 发布
-
-
-# 2021-09-28
-ARL v2.4.1 发布
-
-# 2021-12-24
-ARL v2.5 发布
-
-# 2022-02-21
-ARL v2.5.1 发布
-
-# 2022-08-25
-ARL v2.5.2 发布
-添加 "域名查询插件"，可支持自定义写插件
-添加 nuclei PoC 调用
-添加 监控任务自定义 WEBHOOK 功能
-资产组添加站点批量导入功能
-导入自己收集的资产并对其截图的功能
-任务详情页面添加指纹统计信息Tab
-修复大屏幕情况下任务管理操作功能按钮错位问题
-修复任务详情-SSL TAB-搜索字段错误
-修复风险巡航类型计划任务不会被调度任务
-资产搜索导出功能，最大可导出10万
-资产任务worker 和github任务worker 单独分开
-
-# 2023-01-06
-
-ARL v2.5.3 发布
-1. flask 等组件升级，flask_restplus替换 #364
-2. Mysql弱口令插件错误处理优化 #366
-3. 指纹搜索不可用优化 #402
-4. 主机服务未授权无法检出优化 #420
-5. PoC 重复扫描优化 #427
-6. 优化搜索引擎调用和站点爬虫逻辑 #436
-7. 修改 quake_360 数据源不可以问题 #439 
-8. HTTP 访问后台400优化 #454
-9. 添加 zoomeye 数据源支持 #463
-10. 添加enable字段，控制单个域名查询插件是否启用
-
-
-# 2023-03-17
-ARL v2.5.4 发布
-1. 优化泛解析域名爆破流程
-2. 修复nuclei 在执行时可能出现一个错误 #481
-3. nuclei版本更新
-4. 截图生成文件名正则优化 #498
-5. 域名插件crt.sh，hunter_qax等优化
-6. 修复302 URL过长导致入库失败问题 @原来是老王 @ki9mu
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a># 2020-09-10
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>ARL v2 发布
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a># 2020-09-30
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>ARL v2.1 发布
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a># 2020-12-09
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>ARL v2.2 发布
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a># 2021-01-08
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>ARL v2.2.1 发布
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a># 2021-03-19
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>ARL v2.3 发布
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a># 2021-05-19
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>ARL v2.3.1 发布
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a># 2021-07-22
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>ARL v2.4 发布
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a># 2021-09-28
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>ARL v2.4.1 发布
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a># 2021-12-24
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>ARL v2.5 发布
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a># 2022-02-21
+</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>ARL v2.5.1 发布
+</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a># 2022-08-25
+</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>ARL v2.5.2 发布
+</span><span id="__span-0-34"><a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>添加 "域名查询插件"，可支持自定义写插件
+</span><span id="__span-0-35"><a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a>添加 nuclei PoC 调用
+</span><span id="__span-0-36"><a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a>添加 监控任务自定义 WEBHOOK 功能
+</span><span id="__span-0-37"><a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a>资产组添加站点批量导入功能
+</span><span id="__span-0-38"><a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a>导入自己收集的资产并对其截图的功能
+</span><span id="__span-0-39"><a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a>任务详情页面添加指纹统计信息Tab
+</span><span id="__span-0-40"><a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a>修复大屏幕情况下任务管理操作功能按钮错位问题
+</span><span id="__span-0-41"><a href="#__codelineno-0-41" id="__codelineno-0-41" name="__codelineno-0-41"></a>修复任务详情-SSL TAB-搜索字段错误
+</span><span id="__span-0-42"><a href="#__codelineno-0-42" id="__codelineno-0-42" name="__codelineno-0-42"></a>修复风险巡航类型计划任务不会被调度任务
+</span><span id="__span-0-43"><a href="#__codelineno-0-43" id="__codelineno-0-43" name="__codelineno-0-43"></a>资产搜索导出功能，最大可导出10万
+</span><span id="__span-0-44"><a href="#__codelineno-0-44" id="__codelineno-0-44" name="__codelineno-0-44"></a>资产任务worker 和github任务worker 单独分开
+</span><span id="__span-0-45"><a href="#__codelineno-0-45" id="__codelineno-0-45" name="__codelineno-0-45"></a>
+</span><span id="__span-0-46"><a href="#__codelineno-0-46" id="__codelineno-0-46" name="__codelineno-0-46"></a># 2023-01-06
+</span><span id="__span-0-47"><a href="#__codelineno-0-47" id="__codelineno-0-47" name="__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a href="#__codelineno-0-48" id="__codelineno-0-48" name="__codelineno-0-48"></a>ARL v2.5.3 发布
+</span><span id="__span-0-49"><a href="#__codelineno-0-49" id="__codelineno-0-49" name="__codelineno-0-49"></a>1. flask 等组件升级，flask_restplus替换 #364
+</span><span id="__span-0-50"><a href="#__codelineno-0-50" id="__codelineno-0-50" name="__codelineno-0-50"></a>2. Mysql弱口令插件错误处理优化 #366
+</span><span id="__span-0-51"><a href="#__codelineno-0-51" id="__codelineno-0-51" name="__codelineno-0-51"></a>3. 指纹搜索不可用优化 #402
+</span><span id="__span-0-52"><a href="#__codelineno-0-52" id="__codelineno-0-52" name="__codelineno-0-52"></a>4. 主机服务未授权无法检出优化 #420
+</span><span id="__span-0-53"><a href="#__codelineno-0-53" id="__codelineno-0-53" name="__codelineno-0-53"></a>5. PoC 重复扫描优化 #427
+</span><span id="__span-0-54"><a href="#__codelineno-0-54" id="__codelineno-0-54" name="__codelineno-0-54"></a>6. 优化搜索引擎调用和站点爬虫逻辑 #436
+</span><span id="__span-0-55"><a href="#__codelineno-0-55" id="__codelineno-0-55" name="__codelineno-0-55"></a>7. 修改 quake_360 数据源不可以问题 #439 
+</span><span id="__span-0-56"><a href="#__codelineno-0-56" id="__codelineno-0-56" name="__codelineno-0-56"></a>8. HTTP 访问后台400优化 #454
+</span><span id="__span-0-57"><a href="#__codelineno-0-57" id="__codelineno-0-57" name="__codelineno-0-57"></a>9. 添加 zoomeye 数据源支持 #463
+</span><span id="__span-0-58"><a href="#__codelineno-0-58" id="__codelineno-0-58" name="__codelineno-0-58"></a>10. 添加enable字段，控制单个域名查询插件是否启用
+</span><span id="__span-0-59"><a href="#__codelineno-0-59" id="__codelineno-0-59" name="__codelineno-0-59"></a>
+</span><span id="__span-0-60"><a href="#__codelineno-0-60" id="__codelineno-0-60" name="__codelineno-0-60"></a>
+</span><span id="__span-0-61"><a href="#__codelineno-0-61" id="__codelineno-0-61" name="__codelineno-0-61"></a># 2023-03-17
+</span><span id="__span-0-62"><a href="#__codelineno-0-62" id="__codelineno-0-62" name="__codelineno-0-62"></a>ARL v2.5.4 发布
+</span><span id="__span-0-63"><a href="#__codelineno-0-63" id="__codelineno-0-63" name="__codelineno-0-63"></a>1. 优化泛解析域名爆破流程
+</span><span id="__span-0-64"><a href="#__codelineno-0-64" id="__codelineno-0-64" name="__codelineno-0-64"></a>2. 修复nuclei 在执行时可能出现一个错误 #481
+</span><span id="__span-0-65"><a href="#__codelineno-0-65" id="__codelineno-0-65" name="__codelineno-0-65"></a>3. nuclei版本更新
+</span><span id="__span-0-66"><a href="#__codelineno-0-66" id="__codelineno-0-66" name="__codelineno-0-66"></a>4. 截图生成文件名正则优化 #498
+</span><span id="__span-0-67"><a href="#__codelineno-0-67" id="__codelineno-0-67" name="__codelineno-0-67"></a>5. 域名插件crt.sh，hunter_qax等优化
+</span><span id="__span-0-68"><a href="#__codelineno-0-68" id="__codelineno-0-68" name="__codelineno-0-68"></a>6. 修复302 URL过长导致入库失败问题 @原来是老王 @ki9mu
+</span><span id="__span-0-69"><a href="#__codelineno-0-69" id="__codelineno-0-69" name="__codelineno-0-69"></a>
+</span><span id="__span-0-70"><a href="#__codelineno-0-70" id="__codelineno-0-70" name="__codelineno-0-70"></a>
+</span><span id="__span-0-71"><a href="#__codelineno-0-71" id="__codelineno-0-71" name="__codelineno-0-71"></a># 2023-05-18
+</span><span id="__span-0-72"><a href="#__codelineno-0-72" id="__codelineno-0-72" name="__codelineno-0-72"></a>ARL v2.5.5 发布
+</span><span id="__span-0-73"><a href="#__codelineno-0-73" id="__codelineno-0-73" name="__codelineno-0-73"></a>1. 修复 nuclei 误报 CVE-2022-45362 问题 #559 #535
+</span><span id="__span-0-74"><a href="#__codelineno-0-74" id="__codelineno-0-74" name="__codelineno-0-74"></a>2. 修复数据源 quake_360 查询错误问题  @原来是老王
+</span><span id="__span-0-75"><a href="#__codelineno-0-75" id="__codelineno-0-75" name="__codelineno-0-75"></a>3. 删除数据源 threatminer (不可访问了)
+</span><span id="__span-0-76"><a href="#__codelineno-0-76" id="__codelineno-0-76" name="__codelineno-0-76"></a>4. 过滤无效状态码 410, 减少无用数据入库
+</span></code></pre></div>
 </article>
 </div>
 </div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </button>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: API集成" class="md-footer__link md-footer__link--prev" href="../api/" rel="prev">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: API集成" class="md-footer__link md-footer__link--prev" href="../api/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                Previous
+                上一页
               </span>
-              API集成
-            </div>
+<div class="md-ellipsis">
+                API集成
+              </div>
 </div>
 </a>
-<a aria-label="Next: 免责声明" class="md-footer__link md-footer__link--next" href="../disclaimer/" rel="next">
+<a aria-label="下一页: 免责声明" class="md-footer__link md-footer__link--next" href="../disclaimer/" rel="next">
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                Next
+                下一页
               </span>
-              免责声明
-            </div>
+<div class="md-ellipsis">
+                免责声明
+              </div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
@@ -317,7 +433,7 @@ ARL v2.5.4 发布
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "announce.dismiss"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["tabs", "content.action.edit", "announce.dismiss", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>
