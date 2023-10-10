@@ -21,8 +21,11 @@ Docker环境配置文件路径 docker/config-docker.yaml
 | ARL.ALT\_DNS\_CONCURRENT | 组合生成的域名爆破并发数 |
 | PROXY.HTTP_URL | HTTP代理URL设置 |
 | QUERY_PLUGIN | 域名插件选项配置 |
+| FEISHU | 飞书消息推送配置 |
+| WXWORK | 企业微信消息推送 |
 
 
+## 监控任务消息推送配置
 ### 通过钉钉/邮箱进行资产监控任务结果推送
 #### 1.添加机器人
 使用下面的步骤添加钉钉机器人 【电脑钉钉 】-【群聊】-【群设置】-【智能群助手】-【添加更多】-【添加机器人】-【自定义】-【添加】

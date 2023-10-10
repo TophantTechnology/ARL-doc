@@ -1,5 +1,5 @@
 ### 1. 密码忘记了怎么办？
-Q：可以执行下面的命令，然后使用admin/admin123就可以登录了。
+可以执行下面的命令，然后使用admin/admin123就可以登录了。
 
 ```
 docker exec -ti arl_mongodb mongo -u admin -p admin
@@ -10,11 +10,11 @@ db.user.insert({ username: 'admin',  password: hex_md5('arlsalt!@#'+'admin123') 
 ```
 
 ### 2. 如何修改任务并行数量？
-Q: 修改下面文件43行中的 -c 参数即可，默认为2, 重启容器生效。 
+修改下面文件43行中的 -c 参数即可，默认为2, 重启容器生效。 
 [https://github.com/TophantTechnology/ARL/blob/master/docker/docker-compose.yml#L43](https://github.com/TophantTechnology/ARL/blob/master/docker/docker-compose.yml#L43)
 
 ### 3. 运行出现异常？
-Q: 可以执行下面的三条命令并尝试触发错误观察输出有什么异常。
+可以执行下面的三条命令并尝试触发错误观察输出有什么异常。
 
 ```
 docker-compose ps
@@ -26,11 +26,12 @@ tail -f *.log
 
 排查下宿主机是否开启了`selinux` , 将`selinux`功能关闭即可。
 
-### 5. Docker 环境的 ARL 如何更新？
+### 5. Docker 环境的 ARL 如何升级更新？
+先手动更新`config-docker.yaml`和 `docker-compose.yml`
+docker-compose pull 是为了更新镜像， 如果碰到问题可以排查是否使用了三方镜像源。
 
-git pull 是为了更新docker-compose.yml， docker-compose pull 是为了更新镜像， 如果碰到问题可以排查是否使用了三方镜像源。
 ```
-git pull
+docker-compose down
 docker-compose pull
 docker-compose up -d
 ```
@@ -69,19 +70,8 @@ docker-compose up -d
 1. 可以在IP选项卡中观察端口结果，如果一个都没有可能是扫描过程中被拦截了，端口扫描选项可以不勾选再测试或者端口扫描类型使用测试选项。
 2. 可以在IP选项卡中观察IP归属地选项，大部分是一些国外的IP, 域名是国内厂商可能被神秘力量干扰了。
 
-### 11. 如何升级
-1. 如果有docker-compose.yml等文件有更新可以在Github Releases 对应版本中下载 docker.zip文件 
-2. 如果没有可以手动修改.env中版本为指定版本 (v2.5.3 以后的版本)
-3. 前期条件准备了，记得把旧版本容器停止和删除了再升级，可以`docker ps -a`查看是否有旧版本容器
 
-然后就是更新镜像和启动了
-```shell
-docker-compose down
-docker-compose pull --no-parallel
-docker-compose up -d
-```
-
-### 12. Docker 环境如何卸载并重装
+### 11. Docker 环境如何卸载并重装
 如果忘记了原先的启动目录可以使用下面的命令进行容器停止和删除
 ```shell
 docker stop arl_web
@@ -94,27 +84,34 @@ docker rm arl_worker
 docker rm arl_scheduler
 docker rm arl_rabbitmq
 docker rm arl_mongodb
+docker rmi tophant/arl:latest
 ```
 
 #### 卸载
 ```shell
-docker-compose down 
-docker volume rm arl_db
+docker-compose down
+docker system prune
+docker volume prune
+docker rmi tophant/arl:latest
+docker volume rm arl_db （不执行这个可以保留mongo中的数据）
 ```
 再删除当前目录的文件就可以。
 
 #### 重装
 ```shell
-wget -O docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.4/docker.zip
+cd /opt/
+mkdir docker_arl
+wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6/docker.zip
+cd docker_arl
 unzip -o docker.zip
 docker-compose pull
 docker volume create arl_db
 docker-compose up -d
 ```
 
-### 13. 如何修改ARL-NPoC 的弱口令爆破字典
+### 12. 如何修改 ARL-NPoC 的弱口令爆破字典
 
-1. 进入容器
+1. 进入 worker 容器
 ```shell
 docker exec -it arl_worker bash
 ```

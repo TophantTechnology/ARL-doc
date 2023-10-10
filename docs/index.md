@@ -14,3 +14,4 @@ ARL(Asset Reconnaissance Lighthouse)资产侦察灯塔系统旨在快速侦察�
 * 站点变化监控
 * 文件泄漏等风险检测
 * nuclei PoC 调用
+* [WebInfoHunter](./function_desc/web_info_hunter.md) 调用和监控

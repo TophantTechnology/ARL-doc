@@ -110,6 +110,7 @@ nav:
       - 指纹管理: function_desc/finger.md
       - 计划任务: function_desc/schedule_task.md
       - GitHub监控: function_desc/github_monitor.md
+      - WIH 调用: function_desc/web_info_hunter.md
   - 场景举例: scene_example.md
   - 常见问题: faq.md
   - API集成: api.md
