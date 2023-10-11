@@ -1,5 +1,3 @@
-## wih 调用功能
-
 ### WebInfoHunter 介绍
 
 WebInfoHunter（简称 wih）工具是一款功能强大、易用性高、扩展性强的命令行工具。
@@ -16,23 +14,21 @@ wih 工具支持多种输出格式，包括文本、JSON、CSV、HTML 和 Markdo
 
 而且，wih 工具还支持自动根据站点URL保存输出结果，方便对结果来源进行查找，同时还可以将 AK 和 SK 检出结果单独保存，提高工作效率。
 
-### 特性
+#### 特性
 
 1. 对阿里云, 腾讯云，京东云 的 AK/SK 可以进行有效性检验, 如果AK/SK 都有效将会插入一条 verify_ak_sk 的记录。
 2. 对JWT Token 的有效期进行检验。
 3. 支持通过排除规则，对特定内容，特定站点进行排除, 主要用于监控时，排除一些自动生成的内容。
+4. 支持自定义规则，可以根据自己的需求自定义规则。
 
-### 单独下载使用
-
-可以访问 `https://github.com/1c3z/arl_files/wih/` 查看
-
-## ARL 中调用 wih 的地方
+### 调用 wih 的地方
 
 1. 可以在添加任务的时候勾选 wih 调用按钮，这样在任务执行的时候会调用 wih 工具进行域名等信息的收集， 结果可以在任务详情中 WIH 选项卡中查看
 2. 资产分组 - 添加 wih 监控任务。 这样会周期性的调用 wih 工具进行域名等信息的监控， 结果可以在资产分组详情中 WIH 选项卡中查看
 
-## ARL 中自定义 wih 规则
+### 自定义 wih 规则
 
 1. 可以根据自己的需求修改 arl_worker 中的 [wih_rules.yml](https://github.com/TophantTechnology/ARL/blob/master/app/dicts/wih_rules.yml) 文件 (可不用重启)
 2. 值得注意的是，ARL 中使用的wih规则文件有部分规则是禁用的状态，如果觉得有需要可以修改`enable`字段启用。
+3. 如果想要添加自定义规则，可以在 wih_rules.yml 文件中添加。
 

@@ -11,7 +11,8 @@
 
 #### 1. docker 依赖安装
 
-需要操作系统上预先装好 docker 和docker-compose
+目前暂不支持Windows，初次体验可采用Docker方式运行，长期使用建议采用源码安装方式运行。系统配置建议：CPU:4线程 内存:8G 带宽:10M。  
+由于自动资产发现过程中会有大量的的发包，建议采用云服务器可以带来更好的体验。
 
 Ubuntu 下可以直接执行 `apt-get install docker.io docker-compose -y` 安装相关依赖。
 
@@ -29,18 +30,21 @@ systemctl start docker
 
 #### 2. ARL安装和启动
 ```
+cd /opt/
 mkdir docker_arl
-wget -O docker_arl/docker2.5.4.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.4/docker.zip
+wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6/docker.zip
 cd docker_arl
-unzip docker2.5.4.zip
+unzip -o docker.zip
+docker-compose pull
 docker volume create arl_db
 docker-compose up -d
 ```
 
 ### Docker 环境卸载
-```
-docker-compose down 
-docker volume rm arl_db
+```shell
+docker-compose down
+docker rmi tophant/arl:latest
+docker volume rm arl_db （不执行这个可以保留mongo中的数据）
 ```
 
 再删除当前目录的文件就可以。

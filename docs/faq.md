@@ -90,8 +90,6 @@ docker rmi tophant/arl:latest
 #### 卸载
 ```shell
 docker-compose down
-docker system prune
-docker volume prune
 docker rmi tophant/arl:latest
 docker volume rm arl_db （不执行这个可以保留mongo中的数据）
 ```
