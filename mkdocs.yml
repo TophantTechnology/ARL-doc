@@ -94,6 +94,10 @@ markdown_extensions:
   - pymdownx.tilde
 
 
+extra:
+  404:
+    - error.md
+
 nav:
   - 介绍: index.md
   - 系统安装: system_install.md

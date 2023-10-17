@@ -3,16 +3,14 @@
   [免责声明]: disclaimer.md
 
 ### 系统要求
-目前暂不支持Windows。Linux和Mac建议采用Docker运行，系统配置最低2核4G。
+
+目前暂不支持Windows，初次体验可采用Docker方式运行，长期使用建议采用源码安装方式运行。系统配置建议：CPU:4线程 内存:8G 带宽:10M。  
 由于自动资产发现过程中会有大量的的发包，建议采用云服务器可以带来更好的体验。
 
 
 ### Docker 环境安装ARL
 
 #### 1. docker 依赖安装
-
-目前暂不支持Windows，初次体验可采用Docker方式运行，长期使用建议采用源码安装方式运行。系统配置建议：CPU:4线程 内存:8G 带宽:10M。  
-由于自动资产发现过程中会有大量的的发包，建议采用云服务器可以带来更好的体验。
 
 Ubuntu 下可以直接执行 `apt-get install docker.io docker-compose -y` 安装相关依赖。
 
