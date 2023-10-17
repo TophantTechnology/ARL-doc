@@ -326,6 +326,11 @@
         GitHub监控
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/web_info_hunter/">
+        WIH 调用
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -431,11 +436,10 @@
 <h1>系统安装</h1>
 <p>在开始使用之前，请务必阅读并同意 <a href="../disclaimer/">免责声明</a> 中的条款，否则请勿下载安装使用本系统。</p>
 <h3 id="_1">系统要求<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p>目前暂不支持Windows。Linux和Mac建议采用Docker运行，系统配置最低2核4G。
+<p>目前暂不支持Windows，初次体验可采用Docker方式运行，长期使用建议采用源码安装方式运行。系统配置建议：CPU:4线程 内存:8G 带宽:10M。<br/>
 由于自动资产发现过程中会有大量的的发包，建议采用云服务器可以带来更好的体验。</p>
 <h3 id="docker-arl">Docker 环境安装ARL<a class="headerlink" href="#docker-arl" title="Permanent link">¶</a></h3>
 <h4 id="1-docker">1. docker 依赖安装<a class="headerlink" href="#1-docker" title="Permanent link">¶</a></h4>
-<p>需要操作系统上预先装好 docker 和docker-compose</p>
 <p>Ubuntu 下可以直接执行 <code>apt-get install docker.io docker-compose -y</code> 安装相关依赖。</p>
 <p>Centos 7 可以执行下面的命令安装相关依赖
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>yum install -y yum-utils
@@ -448,16 +452,19 @@
 </span></code></pre></div>
 其他操作系统可以访问官方文档 <a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a></p>
 <h4 id="2-arl">2. ARL安装和启动<a class="headerlink" href="#2-arl" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>mkdir docker_arl
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>wget -O docker_arl/docker2.5.4.zip https://github.com/TophantTechnology/ARL/releases/download/v2.5.4/docker.zip
-</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>cd docker_arl
-</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>unzip docker2.5.4.zip
-</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>docker volume create arl_db
-</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>docker-compose up -d
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>cd /opt/
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>mkdir docker_arl
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6/docker.zip
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>cd docker_arl
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>unzip -o docker.zip
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>docker-compose pull
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>docker volume create arl_db
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>docker-compose up -d
 </span></code></pre></div>
 <h3 id="docker">Docker 环境卸载<a class="headerlink" href="#docker" title="Permanent link">¶</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker-compose down 
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>docker volume rm arl_db
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker-compose<span class="w"> </span>down
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>docker<span class="w"> </span>rmi<span class="w"> </span>tophant/arl:latest
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>docker<span class="w"> </span>volume<span class="w"> </span>rm<span class="w"> </span>arl_db<span class="w"> </span>（不执行这个可以保留mongo中的数据）
 </span></code></pre></div>
 <p>再删除当前目录的文件就可以。</p>
 <h3 id="_2">源码安装<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>

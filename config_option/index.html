@@ -213,6 +213,12 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
+    监控任务消息推送配置
+  </a>
+<nav aria-label="监控任务消息推送配置" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
     通过钉钉/邮箱进行资产监控任务结果推送
   </a>
 <nav aria-label="通过钉钉/邮箱进行资产监控任务结果推送" class="md-nav">
@@ -252,7 +258,7 @@
 <nav aria-label="监控任务自定义 WEBHOOK 功能" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
+<a class="md-nav__link" href="#_3">
     代理配置项
   </a>
 </li>
@@ -260,7 +266,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_4">
     域名查询插件选项
   </a>
 </li>
@@ -268,6 +274,9 @@
 <a class="md-nav__link" href="#token">
     测试Token有效性
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -331,6 +340,11 @@
         GitHub监控
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function_desc/web_info_hunter/">
+        WIH 调用
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -375,6 +389,12 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
+    监控任务消息推送配置
+  </a>
+<nav aria-label="监控任务消息推送配置" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
     通过钉钉/邮箱进行资产监控任务结果推送
   </a>
 <nav aria-label="通过钉钉/邮箱进行资产监控任务结果推送" class="md-nav">
@@ -414,7 +434,7 @@
 <nav aria-label="监控任务自定义 WEBHOOK 功能" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
+<a class="md-nav__link" href="#_3">
     代理配置项
   </a>
 </li>
@@ -422,7 +442,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_4">
     域名查询插件选项
   </a>
 </li>
@@ -430,6 +450,9 @@
 <a class="md-nav__link" href="#token">
     测试Token有效性
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -520,9 +543,18 @@
 <td>QUERY_PLUGIN</td>
 <td>域名插件选项配置</td>
 </tr>
+<tr>
+<td>FEISHU</td>
+<td>飞书消息推送配置</td>
+</tr>
+<tr>
+<td>WXWORK</td>
+<td>企业微信消息推送</td>
+</tr>
 </tbody>
 </table>
-<h3 id="_1">通过钉钉/邮箱进行资产监控任务结果推送<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h2 id="_1">监控任务消息推送配置<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h3 id="_2">通过钉钉/邮箱进行资产监控任务结果推送<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
 <h4 id="1">1.添加机器人<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
 <p>使用下面的步骤添加钉钉机器人 【电脑钉钉 】-【群聊】-【群设置】-【智能群助手】-【添加更多】-【添加机器人】-【自定义】-【添加】</p>
 <p>其中安全设置勾选加签，并保存SEC开始的字符串
@@ -558,13 +590,13 @@
 <p>测试命令 <code>python3.6 -m test.test_webhook &lt;task_id&gt; &lt;scope_id&gt;</code></p>
 <p>如果没有传递source参数，那么就会全部测试。</p>
 <p>测试完毕后重启容器生效。</p>
-<h4 id="_2">代理配置项<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<h4 id="_3">代理配置项<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
 <p>如果为空表示不配置代理。 在docker/config-docker.yaml 配置选项添加了HTTP_URL配置选项， 重启容器生效。 测试配置是否正常工作
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker-compose exec worker bash
 </span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>python3.6 -m test.test_proxy_url
 </span></code></pre></div>
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025194401925_12834.png"><img alt="" src="../images/20221025194401925_12834.png"/></a></p>
-<h3 id="_3">域名查询插件选项<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<h3 id="_4">域名查询插件选项<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>在添加任务选项框中有一个域名查询插件选项，目前已支持的数据源为11个 </p>
 <p><code>alienvault</code>, <code>certspotter</code>,<code>crtsh</code>,<code>fofa</code>,<code>hunter</code>,<code>passivetotal</code>,
 <code>quake</code>, <code>rapiddns</code> <code>securitytrails</code>,<code>virustotal</code>, <code>zoomeye</code></p>
