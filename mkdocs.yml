@@ -1,4 +1,5 @@
 site_name: ARL 资产灯塔系统安装和使用文档
+site_url: https://tophanttechnology.github.io/ARL-doc/
 theme:
   name: material
   features:
