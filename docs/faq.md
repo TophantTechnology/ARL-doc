@@ -118,3 +118,16 @@ docker exec -it arl_worker bash
 ```shell
 ls -alh /opt/ARL-NPoC/xing/dicts
 ```
+
+### 13. 大量 IP 全端口扫描结果很少或者为空
+
+1. 可能是扫描过程中被防火墙拦截了
+2. 检查下系统的 Open File Limit 是否是默认的 1024，如果是的话，可以调大一点，比如 65535
+
+### 14. 子域名扫描结果不理想
+
+1. 检查操作系统 DNS 服务器是否正常，可以使用 dig 命令测试下
+2. 检查灯塔系统内置 DNS （app/dicts/dnsserver.txt） 否正常，可以使用 dig 命令测试下
+3. 宿主机带宽是否正常，可以使用 speedtest-cli 测试下
+4. 大量任务同时执行，可能会导致 DNS 服务器拒绝服务，可以调整任务并发数为 1
+
