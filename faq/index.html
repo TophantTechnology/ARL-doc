@@ -363,6 +363,16 @@
     12. 如何修改 ARL-NPoC 的弱口令爆破字典
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-ip">
+    13. 大量 IP 全端口扫描结果很少或者为空
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14">
+    14. 子域名扫描结果不理想
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -469,6 +479,16 @@
     12. 如何修改 ARL-NPoC 的弱口令爆破字典
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-ip">
+    13. 大量 IP 全端口扫描结果很少或者为空
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14">
+    14. 子域名扫描结果不理想
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -571,6 +591,18 @@ docker-compose pull 是为了更新镜像， 如果碰到问题可以排查是�
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>ls<span class="w"> </span>-alh<span class="w"> </span>/opt/ARL-NPoC/xing/dicts
 </span></code></pre></div></p>
 </li>
+</ol>
+<h3 id="13-ip">13. 大量 IP 全端口扫描结果很少或者为空<a class="headerlink" href="#13-ip" title="Permanent link">¶</a></h3>
+<ol>
+<li>可能是扫描过程中被防火墙拦截了</li>
+<li>检查下系统的 Open File Limit 是否是默认的 1024，如果是的话，可以调大一点，比如 65535</li>
+</ol>
+<h3 id="14">14. 子域名扫描结果不理想<a class="headerlink" href="#14" title="Permanent link">¶</a></h3>
+<ol>
+<li>检查操作系统 DNS 服务器是否正常，可以使用 dig 命令测试下</li>
+<li>检查灯塔系统内置 DNS （app/dicts/dnsserver.txt） 否正常，可以使用 dig 命令测试下</li>
+<li>宿主机带宽是否正常，可以使用 speedtest-cli 测试下</li>
+<li>大量任务同时执行，可能会导致 DNS 服务器拒绝服务，可以调整任务并发数为 1</li>
 </ol>
 </article>
 </div>

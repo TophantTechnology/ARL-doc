@@ -31,6 +31,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -245,9 +248,36 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          指纹管理
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         指纹管理
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 指纹规则语法说明
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 指纹添加
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 指纹导入和导出
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../schedule_task/">
@@ -301,6 +331,27 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 指纹规则语法说明
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 指纹添加
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 指纹导入和导出
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -308,12 +359,54 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>指纹管理</h1>
-<p>只支持<code>body</code>, <code>title</code>, <code>header</code>, <code>icon_hash</code> 四个字段，仅仅可以使用逻辑或， </p>
-<p>如 <code>body="Powered by WordPress"</code></p>
-<p>一条规则可以使用多个字段，每个字段只有或的关系，命中了一个表示规则匹配。</p>
+<h4 id="1">1. 指纹规则语法说明<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
+<p>支持<code>body</code>, <code>title</code>, <code>header</code>, <code>icon_hash</code> 四个字段, 可以用<code>（）</code>进行分组</p>
+<p>支持的操作符有 <code>=</code>, <code>==</code>, <code>&amp;&amp;</code>, <code>||</code>, <code>!</code></p>
+<p>如 <code>body="Powered by WordPress" || body="&lt;meta name=\"generator\" content=\"WordPress"</code></p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>字符串是否包含</td>
+<td>body = "test"</td>
+</tr>
+<tr>
+<td>==</td>
+<td>字符串是否相等</td>
+<td>title == "登录"</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>判断两个值是否都为真</td>
+<td>body = "test1" &amp;&amp; body = "tes2"</td>
+</tr>
+<tr>
+<td>||</td>
+<td>判断两个值是否至少有一个为真</td>
+<td>body = "test1" || body = "tes2"</td>
+</tr>
+<tr>
+<td>!</td>
+<td>对一个值进行逻辑非操作</td>
+<td>!(body = "test")</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2">2. 指纹添加<a class="headerlink" href="#2" title="Permanent link">¶</a></h4>
+<p>在指纹管理界面可以通过<code>添加指纹</code>按钮进行指纹的添加</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025193649132_16937.png"><img alt="" src="../images/20221025193649132_16937.png"/></a></p>
 <p>最后效果将在指纹字段显示，也可以通过该字段进行筛选</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025193709628_8270.png"><img alt="" src="../images/20221025193709628_8270.png"/></a></p>
+<h4 id="3">3. 指纹导入和导出<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
+<p>在指纹管理界面可以通过<code>指纹导出</code>和<code>上传指纹</code>按钮进行指纹的导入和导出</p>
+<p>指纹导入和导出的格式为<code>yml</code>格式。</p>
 </article>
 </div>
 </div>
