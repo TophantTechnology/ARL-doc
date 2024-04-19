@@ -51,13 +51,13 @@ EMAIL:
 执行下面的命令，如果配置正常的话将会收到邮箱和钉钉推送
 
 ```
-docker-compose exec worker bash
+docker compose exec worker bash
 python3.6 -m test.test_utils_push
 ```
 
 如果测试没问题的话，记得执行下面的命令重启让应用生效
 ```
-docker-compose restart
+docker compose restart
 ```
 
 #### 4.测试效果图
@@ -73,7 +73,7 @@ IP/域名监控和站点监控结束后会往配置的webhook URL POST提交JSON
 
 为了验证身份会在Header中带上Token 字段, 接收方可以验证Token字段是否符合预期
 
-进入容器测试 `docker-compose exec worker bash`
+进入容器测试 `docker compose exec worker bash`
 
 测试命令 `python3.6 -m test.test_webhook <task_id> <scope_id>`
 
@@ -85,7 +85,7 @@ IP/域名监控和站点监控结束后会往配置的webhook URL POST提交JSON
 #### 代理配置项
 如果为空表示不配置代理。 在docker/config-docker.yaml 配置选项添加了HTTP_URL配置选项， 重启容器生效。 测试配置是否正常工作
 ```
-docker-compose exec worker bash
+docker compose exec worker bash
 python3.6 -m test.test_proxy_url
 ```
 ![](images/20221025194401925_12834.png)
@@ -104,7 +104,7 @@ python3.6 -m test.test_proxy_url
 
 ### 测试Token有效性
 
-进入容器测试 `docker-compose exec worker bash`
+进入容器测试 `docker compose exec worker bash`
 
 测试命令  `python3.6 -m test.test_query_plugin [source1] [source2]`
 
