@@ -573,11 +573,11 @@
 </span></code></pre></div></p>
 <h4 id="3">3.测试和重启<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
 <p>执行下面的命令，如果配置正常的话将会收到邮箱和钉钉推送</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker-compose exec worker bash
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker compose exec worker bash
 </span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>python3.6 -m test.test_utils_push
 </span></code></pre></div>
 <p>如果测试没问题的话，记得执行下面的命令重启让应用生效
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker-compose restart
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker compose restart
 </span></code></pre></div></p>
 <h4 id="4">4.测试效果图<a class="headerlink" href="#4" title="Permanent link">¶</a></h4>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025191021627_5147.png"><img alt="" src="../images/20221025191021627_5147.png"/></a></p>
@@ -587,13 +587,13 @@
 <p>可以在<code>config-docker.yaml</code> <code>WEBHOOK</code>选项下配置</p>
 <p>IP/域名监控和站点监控结束后会往配置的webhook URL POST提交JSON数据</p>
 <p>为了验证身份会在Header中带上Token 字段, 接收方可以验证Token字段是否符合预期</p>
-<p>进入容器测试 <code>docker-compose exec worker bash</code></p>
+<p>进入容器测试 <code>docker compose exec worker bash</code></p>
 <p>测试命令 <code>python3.6 -m test.test_webhook &lt;task_id&gt; &lt;scope_id&gt;</code></p>
 <p>如果没有传递source参数，那么就会全部测试。</p>
 <p>测试完毕后重启容器生效。</p>
 <h4 id="_3">代理配置项<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
 <p>如果为空表示不配置代理。 在docker/config-docker.yaml 配置选项添加了HTTP_URL配置选项， 重启容器生效。 测试配置是否正常工作
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker-compose exec worker bash
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker compose exec worker bash
 </span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>python3.6 -m test.test_proxy_url
 </span></code></pre></div>
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221025194401925_12834.png"><img alt="" src="../images/20221025194401925_12834.png"/></a></p>
@@ -605,7 +605,7 @@
 <p>由于部分数据源需要配置<code>Token</code>,可以在<code>config-docker.yaml</code> <code>QUERY_PLUGIN</code>选项下配置</p>
 <p>可以通过enable字段来控制是否启用。</p>
 <h3 id="token">测试Token有效性<a class="headerlink" href="#token" title="Permanent link">¶</a></h3>
-<p>进入容器测试 <code>docker-compose exec worker bash</code></p>
+<p>进入容器测试 <code>docker compose exec worker bash</code></p>
 <p>测试命令  <code>python3.6 -m test.test_query_plugin [source1] [source2]</code></p>
 <p>如果没有传递source参数，那么就会全部测试。</p>
 <p>测试完毕后重启容器生效。</p>
