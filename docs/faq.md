@@ -17,8 +17,8 @@ db.user.insert({ username: 'admin',  password: hex_md5('arlsalt!@#'+'admin123') 
 可以执行下面的三条命令并尝试触发错误观察输出有什么异常。
 
 ```
-docker-compose ps
-docker-compose logs -f  --tail=10
+docker compose ps
+docker compose logs -f  --tail=10
 tail -f *.log
 ```
 
@@ -28,12 +28,12 @@ tail -f *.log
 
 ### 5. Docker 环境的 ARL 如何升级更新？
 先手动更新`config-docker.yaml`和 `docker-compose.yml`
-docker-compose pull 是为了更新镜像， 如果碰到问题可以排查是否使用了三方镜像源。
+docker compose pull 是为了更新镜像， 如果碰到问题可以排查是否使用了三方镜像源。
 
 ```
-docker-compose down
-docker-compose pull
-docker-compose up -d
+docker compose down
+docker compose pull
+docker compose up -d
 ```
 
 ### 6. 任务结果为什么只有域名和IP结果？
@@ -84,13 +84,13 @@ docker rm arl_worker
 docker rm arl_scheduler
 docker rm arl_rabbitmq
 docker rm arl_mongodb
-docker rmi tophant/arl:latest
+docker rmi tophant/arl:v2.6.2
 ```
 
 #### 卸载
 ```shell
-docker-compose down
-docker rmi tophant/arl:latest
+docker compose down
+docker rmi tophant/arl:v2.6.2
 docker volume rm arl_db （不执行这个可以保留mongo中的数据）
 ```
 再删除当前目录的文件就可以。
@@ -99,12 +99,12 @@ docker volume rm arl_db （不执行这个可以保留mongo中的数据）
 ```shell
 cd /opt/
 mkdir docker_arl
-wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6/docker.zip
+wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6.2/docker.zip
 cd docker_arl
 unzip -o docker.zip
-docker-compose pull
+docker compose pull
 docker volume create arl_db
-docker-compose up -d
+docker compose up -d
 ```
 
 ### 12. 如何修改 ARL-NPoC 的弱口令爆破字典

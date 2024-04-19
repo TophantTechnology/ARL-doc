@@ -30,18 +30,18 @@ systemctl start docker
 ```
 cd /opt/
 mkdir docker_arl
-wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6/docker.zip
+wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6.2/docker.zip
 cd docker_arl
 unzip -o docker.zip
-docker-compose pull
+docker compose pull
 docker volume create arl_db
-docker-compose up -d
+docker compose up -d
 ```
 
 ### Docker 环境卸载
 ```shell
-docker-compose down
-docker rmi tophant/arl:latest
+docker compose down
+docker rmi tophant/arl:v2.6.2
 docker volume rm arl_db （不执行这个可以保留mongo中的数据）
 ```
 
