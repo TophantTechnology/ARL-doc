@@ -255,6 +255,45 @@
     访问 ARL 系统
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#podman-arl">
+    podman 环境安装 ARL 参考
+  </a>
+<nav aria-label="podman 环境安装 ARL 参考" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0">
+    0. 操作系统环境
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-podman">
+    1. podman 依赖安装
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_1">
+    2. 指定默认的镜像仓库
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-dockerzip">
+    3. 下载docker.zip 配置文件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-worker-net_raw">
+    4. worker 容器添加 NET_RAW 权限
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 启动运行
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -427,6 +466,45 @@
     访问 ARL 系统
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#podman-arl">
+    podman 环境安装 ARL 参考
+  </a>
+<nav aria-label="podman 环境安装 ARL 参考" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0">
+    0. 操作系统环境
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-podman">
+    1. podman 依赖安装
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_1">
+    2. 指定默认的镜像仓库
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-dockerzip">
+    3. 下载docker.zip 配置文件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-worker-net_raw">
+    4. worker 容器添加 NET_RAW 权限
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 启动运行
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -485,6 +563,45 @@
 URL：<a href="https://127.0.0.1:5003">https://127.0.0.1:5003</a>
 密码： admin/arlpass</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/20221017150037013_6380.png"><img alt="" src="../images/20221017150037013_6380.png"/></a></p>
+<h3 id="podman-arl">podman 环境安装 ARL 参考<a class="headerlink" href="#podman-arl" title="Permanent link">¶</a></h3>
+<h4 id="0">0. 操作系统环境<a class="headerlink" href="#0" title="Permanent link">¶</a></h4>
+<p>kali-linux-2024.1</p>
+<h4 id="1-podman">1. podman 依赖安装<a class="headerlink" href="#1-podman" title="Permanent link">¶</a></h4>
+<p>安装相关依赖。
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="l l-Scalar l-Scalar-Plain">sudo apt-get update</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="l l-Scalar l-Scalar-Plain">sudo apt-get -y install podman podman-compose</span>
+</span></code></pre></div></p>
+<p>其他操作系统可以访问官方文档 <a href="https://podman.io/docs/installation">https://podman.io/docs/installation</a></p>
+<h4 id="2_1">2. 指定默认的镜像仓库<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h4>
+<p>修改文件 <code>/etc/containers/registries.conf</code>
+添加下面的内容
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>[registries.search]
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>registries = ['docker.io']
+</span></code></pre></div></p>
+<h4 id="3-dockerzip">3. 下载docker.zip 配置文件<a class="headerlink" href="#3-dockerzip" title="Permanent link">¶</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>cd ~
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>mkdir docker_arl
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6.2/docker.zip
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>cd docker_arl
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>unzip -o docker.zip
+</span></code></pre></div>
+<h4 id="4-worker-net_raw">4. worker 容器添加 NET_RAW 权限<a class="headerlink" href="#4-worker-net_raw" title="Permanent link">¶</a></h4>
+<p>解决 nmap 报错 <code>Couldn't open a raw socket. Error: Operation not permitted</code>
+nmap 在扫描端口的时候需要 NET_RAW 权限，</p>
+<p>修改 docker-compose.yml 给 worker 容器添加权限
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">    </span><span class="nt">cap_add</span><span class="p">:</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_RAW</span>
+</span></code></pre></div></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/add_cap_net_raw.png"><img alt="img_2.png" src="../images/add_cap_net_raw.png"/></a></p>
+<h4 id="5">5. 启动运行<a class="headerlink" href="#5" title="Permanent link">¶</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>podman-compose pull
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>podman volume create arl_db
+</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>podman-compose up -d
+</span></code></pre></div>
+<p>podman-compose pull 截图</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/podman-compose-pull.png"><img alt="podman-compose-pull.png" src="../images/podman-compose-pull.png"/></a></p>
+<p>podman-compose ps 截图</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../images/podman-compose-ps.png"><img alt="podman-compose-ps.png" src="../images/podman-compose-ps.png"/></a></p>
 </article>
 </div>
 </div>
