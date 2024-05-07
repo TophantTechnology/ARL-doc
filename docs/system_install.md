@@ -73,3 +73,70 @@ URL：https://127.0.0.1:5003
 密码： admin/arlpass
 
 ![](images/20221017150037013_6380.png)
+
+
+
+### podman 环境安装 ARL 参考
+
+#### 0. 操作系统环境
+
+kali-linux-2024.1
+
+#### 1. podman 依赖安装
+
+安装相关依赖。
+```yaml
+sudo apt-get update
+sudo apt-get -y install podman podman-compose
+```
+
+其他操作系统可以访问官方文档 [https://podman.io/docs/installation](https://podman.io/docs/installation)
+
+
+#### 2. 指定默认的镜像仓库
+修改文件 `/etc/containers/registries.conf`
+添加下面的内容
+```
+[registries.search]
+registries = ['docker.io']
+```
+
+#### 3. 下载docker.zip 配置文件
+```
+cd ~
+mkdir docker_arl
+wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6.2/docker.zip
+cd docker_arl
+unzip -o docker.zip
+```
+
+#### 4. worker 容器添加 NET_RAW 权限
+
+解决 nmap 报错 `Couldn't open a raw socket. Error: Operation not permitted`
+nmap 在扫描端口的时候需要 NET_RAW 权限，
+
+修改 docker-compose.yml 给 worker 容器添加权限
+```yaml
+    cap_add:
+      - NET_RAW
+```
+
+![img_2.png](./images/add_cap_net_raw.png)
+
+
+#### 5. 启动运行
+```
+podman-compose pull
+podman volume create arl_db
+podman-compose up -d
+```
+
+podman-compose pull 截图
+
+![podman-compose-pull.png](./images/podman-compose-pull.png)
+
+
+
+podman-compose ps 截图
+
+![podman-compose-ps.png](./images/podman-compose-ps.png)
